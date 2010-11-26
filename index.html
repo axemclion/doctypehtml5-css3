@@ -6,6 +6,8 @@
         <base target="_blank" />
         <script type="text/javascript" src="jquery-1.4.4.min.js">
         </script>
+        <script src = "jquery-ui.min.js" type = "text/javascript">
+        </script>
     </head>
     <body>
         <div class="presentation">
@@ -178,14 +180,14 @@
                     }
                     
                     #transitionDiv2 {
-                    	margin : 2em;
+                        margin: 2em;
                         transition-property: left;
                         transition-duration: 4s;
-						-moz-transition-property: left;
+                        -moz-transition-property: left;
                         -moz-transition-duration: 4s;
-						-webkit-transition-property: left;
+                        -webkit-transition-property: left;
                         -webkit-transition-duration: 4s;
-						-o-transition-property: left;
+                        -o-transition-property: left;
                         -o-transition-duration: 4s;
                         position: relative;
                         border: SOLID 1px BLACK;
@@ -221,11 +223,178 @@
                     </pre>
                 </div>
             </div>
-			<div class = "slide">
-				<div class = "slide-title">
-					Translations
-				</div>
-			</div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    Transforms
+                </div>
+                <ul>
+                    <li>
+                        Translate
+                    </li>
+                    <li>
+                        Scale
+                    </li>
+                    <li>
+                        Rotate
+                    </li>
+                </ul>
+                <style>
+                    #transformDiv {
+                        width: 60%;
+                        background-color: #ABCDEF;
+                    }
+                    
+                    #transformDiv:hover {
+                        transform: translate(80px, 80px) scale(0.5, 1.5) rotate(45deg);
+                        -moz-transform: translate(80px, 80px) scale(0.5, 1.5) rotate(45deg);
+                        -webkit-transform: translate(80px, 80px) scale(0.5, 1.5) rotate(45deg);
+                        -o-transform: translate(80px, 80px) scale(0.5, 1.5) rotate(45deg);
+                        -transition-duration: 4s;
+                        -o-transition-duration: 4s;
+                        -moz-transition-duration: 4s;
+                        -webkit-transition-duration: 4s;
+                    }
+                </style>
+                <div id = "transformDiv">
+                    <pre>
+                        #transformDiv:hover {
+                          transform: translate(80px, 80px) scale(0.5, 1.5) rotate(45deg);
+                        }
+                    </pre>
+                </div>
+                <style>
+                    #outerspace {
+                        position: relative;
+                        height: 400px;
+                        background-position: left bottom;
+                        -webkit-transition: all 3s ease-in;
+                        -moz-transition: all 3s ease-in;
+                        -o-transition: all 3s ease-in;
+                    }
+                    
+                    div.rocket {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 20px;
+                        -webkit-transition: -webkit-transform 3s ease-in;
+                        -moz-transition: -moz-transform 3s ease-in;
+                        -o-transition: -o-transform 3s ease-in;
+                    }
+                    
+                    div.rocket img {
+                        -webkit-transition: all 2s ease-in-out;
+                        -moz-transition: all 2s ease-in-out;
+                        -o-transition: all 2s ease-in-out;
+                    }
+                    
+                    #outerspace:hover {
+                        background-position: -50% bottom;
+                    }
+                    
+                    #outerspace:hover div.rocket {
+                        -webkit-transform: translate(540px, -200px);
+                        -moz-transform: translate(540px, -200px);
+                        -o-transform: translate(540px, -200px);
+                        border: 1px dashed #666;
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                    
+                    #outerspace:hover div.rocket img {
+                        -webkit-transform: rotate(70deg);
+                        -moz-transform: rotate(70deg);
+                        -o-transform: rotate(70deg);
+                    }
+                </style>
+                <div id="outerspace" style ="background-image:url('http://www.the-art-of-web.com/images/outerspace.jpg')">
+                    <div class="rocket">
+                        <img src="data:image/gif;base64,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" width="92" height="215" alt="rocket animation">
+                    </div><a href = "http://www.the-art-of-web.com/css/css-animation/">http://www.the-art-of-web.com/css/css-animation/</a>
+                </div>
+            </div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    Shadows
+                </div>
+                <style>
+                    #shadow1 {
+                        position: relative;
+                        width: 100px;
+                        height: 100px;
+                        margin: 10px;
+                        padding: 0;
+                        background: #6fb2e5;
+                        box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
+                        -o-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
+                        -webkit-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
+                        -moz-box-shadow: 0 1px 5px #0061aa, inset 0 10px 20px #b6f9ff;
+                    }
+                    
+                    #shadow2 {
+                        position: relative;
+                        width: 100px;
+                        height: 100px;
+                        margin: 10px;
+                        padding: 0;
+                        background: #ccc;
+                        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5), inset 8px 10px 10px rgba(255, 255, 255, 0.75);
+                        -o-box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5), inset 8px 10px 10px rgba(255, 255, 255, 0.75);
+                        -webkit-box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5), inset 8px 10px 10px rgba(255, 255, 255, 0.75);
+                        -moz-box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5), inset 8px 10px 10px rgba(255, 255, 255, 0.75);
+                    }
+                    
+                    #shadow3 {
+                        position: relative;
+                        width: 100px;
+                        height: 100px;
+                        margin: 10px;
+                        padding: 0;
+                        border: 1px solid rgba(0, 0, 0, 0.5);
+                        border-radius: 10px 10px 2px 2px;
+                        background: rgba(0, 0, 0, 0.25);
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+                        -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+                        -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+                        -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+                    }
+                </style>
+                <div style ="box-shadow:3px 3px 5px #000;-moz-box-shadow:3px 3px 5px #000;-webkit-box-shadow:3px 3px 5px #000; border : SOLID 1px BLACK">
+                    <pre>
+                        div{
+                          box-shadow:3px 3px 5px #000;
+                          -moz-box-shadow:3px 3px 5px #000;
+                          -webkit-box-shadow:3px 3px 5px #000;
+                        }
+                    </pre>
+                </div>
+                <br/>
+                <br/>
+                <div style ="text-shadow:0 0 10px BLACK; font-size : 2em">
+                    div {
+                    <br/>
+                    text-shadow: text-shadow:3px 3px 0px GRAY;
+                    <br/>
+                    }
+                </div>
+                <br/>
+                <br/>
+                <div id = "shadow1" style ="clear:both; float:left">
+                </div>
+                <div id = "shadow2" style ="float:left">
+                </div>
+                <div id = "shadow3" style ="float:left">
+                </div>
+                <ul style ="clear:both">
+                    <li>
+                        <a href = "http://www.westciv.com/tools/boxshadows/index.html">http://www.westciv.com/tools/boxshadows/index.html</a>
+                    </li>
+                    <li>
+                        <a href = "http://devfiles.myopera.com/articles/1661/widgetstyling_win7.html">http://devfiles.myopera.com/articles/1661/widgetstyling_win7.html</a>
+                    </li>
+                </ul>
+                <script>
+                    $("#shadow1, #shadow2,#shadow3").draggable().css("float", "left");
+                </script>
+            </div>
         </div>
         <script type="text/javascript">
             jQuery.fx.off = true;
