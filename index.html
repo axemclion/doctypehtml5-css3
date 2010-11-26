@@ -1,1 +1,181 @@
-My GitHub Page
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 and Presentation : doctypehtml5</title>
+        <link type="text/css" rel="stylesheet" href="main.css" />
+        <base target="_blank" />
+        <script type="text/javascript" src="jquery-1.4.4.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="presentation">
+            <div class="slide slide-current" style="text-align: center; display: block">
+                <h1 style="margin-top: 3em; font-size: 4em; text-shadow: 0px 2px 3px #FFF; color: #666666; font-style: italic;">CSS
+                    3 and Presentation</h1>
+                <h3 style="text-shadow: 0px 2px 3px #AAA">Parashuram N (<a href="http://google.com/search?q=axemclion">axemclion</a>)</h3>
+                <a href="http://nparashuram.com">http://nparashuram.com</a>
+            </div>
+            <div class="slide" style="background-image: url('img/beerbar.jpg')">
+                <div class="quote" style="font-size: 3em;">
+                    <span class="question">Q: 
+                        Why did the hot girl at the bar ignore the HTML page? </span>
+                    <br/>
+                    <br/>
+                    <span class="answer">A: Coz it didn't have &lt;style&gt; !!</span>
+                </div>
+            </div>
+            <div class="slide">
+                <div style="overflow-y: scroll; height: 100%">
+                    <img src="img/web-designers-vs-developers.png" style="width: 90%; margin-left: 5%;"/>
+                </div>
+            </div>
+            <div class="slide">
+                <div style="margin: 1em; font-size: 1.5em; float: left">
+                    <div class="slide-title">
+                        Why so awesome ?
+                    </div>
+                    <ul>
+                        <li>
+                            Rounded Corners
+                        </li>
+                        <li>
+                            Web Fonts
+                        </li>
+                        <li>
+                            Transitions and Transforms
+                        </li>
+                        <li>
+                            Shadows
+                        </li>
+                        <li>
+                            Media Queries
+                        </li>
+                        <li>
+                            Selectors
+                        </li>
+                        <li>
+                            Whats next ?
+                        </li>
+                    </ul>
+                </div>
+                <img style="float: right; padding-right: 1em; box-shadow: 0px 0px 5px GRAY;" src="img/cssisawesome.png" />
+                <br/>
+            </div>
+            <div class="slide">
+                <div class="slide-title">
+                    Rounded Corners
+                </div>
+                <code>
+                    // The CSS3 property
+                    <br/>
+                    <b>border-radius: <span>10px 5em 10% 3;</span>;</b>
+                    <br/>
+                    <br/>
+                    // Firefox 
+                    <br/>
+                    <b>-moz-border-radius: <span>10px 5em 10% 3; </span>;</b>
+                    <br/>
+                    <br/>
+                    //Webkit 
+                    <br/>
+                    <b>-webkit-border-radius: <span>10px 5em 10% 3; </span>;</b>
+                    <br/>
+                    <br/>
+                </code>
+                <div id="roundedCorner" style="border: #444444 SOLID 10px; width: 60%; margin: auto; padding: 2em;">
+                    <input type="range" style="float: left" name="TopLeft" value=0 /><input type="range" style="float: right" value=0 name = "TopRight"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <input type="range" style="float: left" value=0 name="BottomLeft"/><input type="range" style="float: right" value=0 name = "BottomRight"/>
+                    <script type="text/javascript">
+                        $("#roundedCorner input[type=range]").change(function(){
+                            var borderRadius = [$("#roundedCorner input[name=TopLeft]").val(), $("#roundedCorner input[name=TopRight]").val(), $("#roundedCorner input[name=BottomLeft]").val(), $("#roundedCorner input[name=BottomRight]").val()].join("px ");
+                            $("#roundedCorner").siblings("code").find("b>span").html(borderRadius);
+                            
+                            document.getElementById('roundedCorner').style["WebkitBorderRadius"] = borderRadius;
+                            document.getElementById('roundedCorner').style["OBorderRadius"] = borderRadius;
+                            document.getElementById('roundedCorner').style["MozBorderRadius"] = borderRadius;
+                            document.getElementById('roundedCorner').style["borderRadius"] = borderRadius;
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    @font-face
+                </div>
+                <ul>
+                    <li>
+                        Use any custom font on web pages
+                    </li>
+                    <li>
+                        Font downloaded and rendered on user's box 
+                    </li>
+                    <li>
+                        Format wars - Embedded Open Type (EOF), Web Open font format(WOFF), Open Type(OTF), True Type(TTF)
+                    </li>
+                    <li>
+                        Font can also be a data:// URI
+                    </li>
+                </ul>
+                <br/>
+                <br/>
+                <code>
+                    <b>@font-face </b>{ 
+                    <br/>
+                    font-family: <i class = "fontFaceTargetName">MyName</i>;
+                    <br/>
+                    src: url('
+                    <select id="fontFace">
+                        <option value = "KingThings">img/Kingthings_Italique.ttf</option>
+                        <option value = "Megalopolis">http://www.fontsquirrel.com/site_resources/themes/default_theme/css/fonts/megalopolisextra-webfont.woff</option>
+                        <option value = "Diavlo">http://www.opentype.info/demo/fonts/Diavlo_BLACK_II_37.otf</option>
+                        <option value = "Pykes">http://www.opentype.info/demo/fonts/pykes_peak_zero.otf</option>
+                    </select>');
+                    <br/>
+                    }
+                    <script>
+                        var style = [];
+                        $("#fontFace option").each(function(){
+                            style.push("@font-face{");
+                            style.push("font-family:" + $(this).attr("value"));
+                            style.push(";src: url('" + $(this).html() + "')");
+                            style.push("}")
+                        });
+                        var x = document.createElement("style");
+                        x.innerHTML = style.join("");
+                        document.body.appendChild(x);
+                        
+                        $("#fontFace").change(function(){
+                            $("#fontFaceTarget").css("font-family", $(this).attr("value"));
+                            $(".fontFaceTargetName").html($(this).attr("value"));
+                        })
+                    </script>
+                    <br/>
+                    <br/>
+                    &lt;span style ="font-family:<i class = "fontFaceTargetName">MyName</i>"&gt;<span id = "fontFaceTarget" style ="font-family:Megal">This is in a <span class="fontFaceTargetName">default</span> font</span>&lt;/span&gt;
+                </code>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery.fx.off = true;
+            function moveSlide(back){
+                var current = $(".slide-current").removeClass("slide-current").slideUp(1000);
+                if (back) {
+                    current.prev(".slide").addClass("slide-current").slideDown(1000);
+                }
+                else {
+                    current.next(".slide").addClass("slide-current").slideDown(1000);
+                }
+                $(".slide-current").length === 0 &&
+                current.addClass("slide-current").slideDown(1000);
+            }
+            
+            $(document).keydown(function(event){
+                event.keyCode === 39 && moveSlide();
+                event.keyCode === 37 && moveSlide(true);
+            });
+        </script>
+    </body>
+</html>

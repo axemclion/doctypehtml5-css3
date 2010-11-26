@@ -1,0 +1,66 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: #666666;
+    background: -moz-linear-gradient(top, #666666 0%, #AAAAAA 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #666666),
+		color-stop(100%, #aaaaaa) );
+}
+
+a {
+	text-decoration: none;
+}
+
+.presentation {
+	width: 100%;
+	height: 100%;
+}
+
+.slide {
+	height: 92%;
+	width: 92%;
+	top: 2%;
+	padding: 2%;
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+	display: none;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	background: -webkit-gradient(linear, left bottom, left top, from(#bbd),
+		to(#fff) );
+	background: -moz-linear-gradient(bottom, #bbb, #fff);
+	background: linear-gradient(bottom, #bbb, #fff);
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+}
+
+.quote {
+	width: 80%;
+	background-color: #666666;
+	opacity: 0.8;
+	color: #FFFFFF;
+	padding: 1em;
+	margin: 1em auto 1em auto;
+	-moz-border-radius: 1em;
+	border-radius: 0.2em;
+	color: #FFFFFF;
+	-moz-border-radius: 1em;
+}
+
+.slide-title {
+	color: GRAY;
+	font-size: 2em;
+	margin-bottom : 1em;
+	text-shadow: 0px 1px 0px #e5e5ee;
+}
