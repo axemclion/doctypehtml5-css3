@@ -225,6 +225,14 @@
             </div>
             <div class = "slide">
                 <div class = "slide-title">
+                    Gradients
+                </div>
+                <a href = "http://www.colorzilla.com/gradient-editor/">http://www.colorzilla.com/gradient-editor/</a>
+                <iframe src = "http://www.colorzilla.com/gradient-editor/" style ="width : 100%; height : 600px; border : 0">
+                </iframe>
+            </div>
+            <div class = "slide">
+                <div class = "slide-title">
                     Transforms
                 </div>
                 <ul>
@@ -394,6 +402,108 @@
                 <script>
                     $("#shadow1, #shadow2,#shadow3").draggable().css("float", "left");
                 </script>
+            </div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    Media Queries
+                </div>
+                <pre>
+                    <b>@media all and (min-width: 480px) and (max-width: 800px)</b> { 
+                      #container {width: auto; max-width: 800px;} 
+                      #main {width: 70%; float: left;}  
+                      #sidebar {width: 29%; float: left; margin-bottom: 10px;} 
+                      #pub {width: 29%; margin-left: 70%; float: none;} 
+                    }
+                    <b>@media all and (max-width: 480px)</b> {
+                      #container, #main, #sidebar {width: 100%; font-size: 0.9em;} 
+                      #pub {display: none;} 
+                      #sidebar ul li {display: inline;}  
+                      *{clear: both; border-left: 0 !important; border-right: 0 !important;} 
+                    } 
+                </pre>
+                <a href ="http://slides.doctypehtml5.in/shwetank/" style ="float:right">Courtsey: Shewtank</a>
+                <img src = "img/screen_sizes_small.png" style ="margin:auto"/>
+            </div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    Selectors
+                </div>
+                <div>
+                    <pre style="font-size:100%;">//Matches anchors elements which link to wikipedia		        
+a[<b>href="www.wikipedia.org"</b>]{	
+    text-decoration: underline;
+}
+
+//Matches all images whose ALT attribute start with 'The'
+img[<b>alt~="The"</b>]{
+	margin-right: 55px;
+	margin-bottom: 15px;
+}
+
+//Matches all images whose ALT attribute have the word 'TV' in them
+img[<b>alt*="TV"</b>]{
+	margin-bottom: 15px;
+}
+}
+//Matches the first list element
+ul <b>li:first-child</b>{ //css2
+	color: red;
+	text-decoration: underline;
+}
+
+//Matches the last list element
+ul <b>li:last-child</b>{ //css2
+	color: blue;
+}
+
+//Matches every third list element
+ul <b>li:nth-child(3n)</b>{ //css3!
+	color: green;
+}
+ </pre>
+                </div>
+            </div>
+            <div class = "slide" style ="font-size : 1.5em">
+                <div class = "slide-title">
+                    And More...
+                </div>
+                <ul>
+                    <li>
+                        -moz-column-width: 13em; -webkit-column-width: 13em; -moz-column-gap: 1em; -webkit-column-gap: 1em;
+                    </li>
+                    <li>
+                        -moz-calc() width: -moz-calc(25% - 1em);
+                    </li>
+                    <li>
+                        Filters for IE 
+                    </li>
+                    <li>
+                        SVG background images. Multiple background images.
+                    </li>
+                    <li>
+                        RGBA rgba(255,255,255,0.7); HSLA Colors hsla(0,0%,100%,0.7);
+                    </li>
+                </ul>
+                <div class = "slide-title">
+                    Some Gotchas
+                </div>
+                <ul>
+                    <li>
+                        Use fonts carefully - embed fonts in CSS files
+                    </li>
+                    <li>
+                        Opacity may lead to performance hits
+                    </li>
+                    <li>
+                        Excessive transforms cost rendering cycles
+                    </li>
+                    <li>
+                        Vendor Prefixes
+                    </li>
+                    <li>
+                        Guard the modularity
+                    </li>
+                </ul>
             </div>
         </div>
         <script type="text/javascript">
