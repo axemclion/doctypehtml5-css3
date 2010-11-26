@@ -92,7 +92,7 @@
                     <input type="range" style="float: left" value=0 name="BottomLeft"/><input type="range" style="float: right" value=0 name = "BottomRight"/>
                     <script type="text/javascript">
                         $("#roundedCorner input[type=range]").change(function(){
-                            var borderRadius = [$("#roundedCorner input[name=TopLeft]").val(), $("#roundedCorner input[name=TopRight]").val(), $("#roundedCorner input[name=BottomLeft]").val(), $("#roundedCorner input[name=BottomRight]").val()].join("px ");
+                            var borderRadius = [$("#roundedCorner input[name=TopLeft]").val(), $("#roundedCorner input[name=TopRight]").val(), $("#roundedCorner input[name=BottomRight]").val(), $("#roundedCorner input[name=BottomLeft]").val(), ""].join("px ");
                             $("#roundedCorner").siblings("code").find("b>span").html(borderRadius);
                             
                             document.getElementById('roundedCorner').style["WebkitBorderRadius"] = borderRadius;
@@ -472,7 +472,7 @@ ul <b>li:nth-child(3n)</b>{ //css3!
                         -moz-column-width: 13em; -webkit-column-width: 13em; -moz-column-gap: 1em; -webkit-column-gap: 1em;
                     </li>
                     <li>
-                        -moz-calc() width: -moz-calc(25% - 1em);
+                        width: -moz-calc(25% - 1em);
                     </li>
                     <li>
                         Filters for IE 
