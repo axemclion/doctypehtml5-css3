@@ -121,11 +121,9 @@
                 </ul>
                 <br/>
                 <br/>
-                <code>
+                <pre>
                     <b>@font-face </b>{ 
-                    <br/>
                     font-family: <i class = "fontFaceTargetName">MyName</i>;
-                    <br/>
                     src: url('
                     <select id="fontFace">
                         <option value = "KingThings">img/Kingthings_Italique.ttf</option>
@@ -133,30 +131,101 @@
                         <option value = "Diavlo">http://www.opentype.info/demo/fonts/Diavlo_BLACK_II_37.otf</option>
                         <option value = "Pykes">http://www.opentype.info/demo/fonts/pykes_peak_zero.otf</option>
                     </select>');
-                    <br/>
                     }
-                    <script>
-                        var style = [];
-                        $("#fontFace option").each(function(){
-                            style.push("@font-face{");
-                            style.push("font-family:" + $(this).attr("value"));
-                            style.push(";src: url('" + $(this).html() + "')");
-                            style.push("}")
-                        });
-                        var x = document.createElement("style");
-                        x.innerHTML = style.join("");
-                        document.body.appendChild(x);
-                        
-                        $("#fontFace").change(function(){
-                            $("#fontFaceTarget").css("font-family", $(this).attr("value"));
-                            $(".fontFaceTargetName").html($(this).attr("value"));
-                        })
-                    </script>
                     <br/>
-                    <br/>
-                    &lt;span style ="font-family:<i class = "fontFaceTargetName">MyName</i>"&gt;<span id = "fontFaceTarget" style ="font-family:Megal">This is in a <span class="fontFaceTargetName">default</span> font</span>&lt;/span&gt;
-                </code>
+                    &lt;span style ="font-family:<i class = "fontFaceTargetName">MyName</i>"&gt;
+                    <span id = "fontFaceTarget" style ="font-family:Megal">This is in a <span class="fontFaceTargetName">default</span> font</span>
+                    &lt;/span&gt;
+                </pre>
+                <script>
+                    var style = [];
+                    $("#fontFace option").each(function(){
+                        style.push("@font-face{");
+                        style.push("font-family:" + $(this).attr("value"));
+                        style.push(";src: url('" + $(this).html() + "')");
+                        style.push("}")
+                    });
+                    var x = document.createElement("style");
+                    x.innerHTML = style.join("");
+                    document.body.appendChild(x);
+                    
+                    $("#fontFace").change(function(){
+                        $("#fontFaceTarget").css("font-family", $(this).attr("value"));
+                        $(".fontFaceTargetName").html($(this).attr("value"));
+                    })
+                </script>
             </div>
+            <div class = "slide">
+                <div class = "slide-title">
+                    Animations (Transitions)
+                </div>
+                <style>
+                    #transitionDiv1 {
+                        padding: 1em;
+                        background-color: #ABCDEF;
+                        -o-transition-property: background-color;
+                        -o-transition-duration: 4s;
+                        -moz-transition-property: background-color;
+                        -moz-transition-duration: 4s;
+                        -webkit-transition-property: background-color;
+                        -webkit-transition-duration: 4s;
+                        transition-property: background-color;
+                        transition-duration: 4s;
+                    }
+                    
+                    #transitionDiv1:hover {
+                        background-color: RED;
+                    }
+                    
+                    #transitionDiv2 {
+                    	margin : 2em;
+                        transition-property: left;
+                        transition-duration: 4s;
+						-moz-transition-property: left;
+                        -moz-transition-duration: 4s;
+						-webkit-transition-property: left;
+                        -webkit-transition-duration: 4s;
+						-o-transition-property: left;
+                        -o-transition-duration: 4s;
+                        position: relative;
+                        border: SOLID 1px BLACK;
+                    }
+                    
+                    #transitionDiv2:hover {
+                        left: 3em;
+                    }
+                </style>
+                <div id ="transitionDiv1">
+                    <pre>
+                        div{
+                          background-color: #ABCDEF;
+                          transition-property: background-color;
+                          transition-duration: 3s;
+                        }
+						
+                        div:hover{
+                          background-color: blue;
+                        }
+                    </pre>
+                </div>
+                <div id = "transitionDiv2">
+                    <pre>
+                        div{
+                          transition-property: left;
+                          transition-duration: 3s;
+                        }
+						
+                        div:hover{
+                          left: -3em;
+                        }
+                    </pre>
+                </div>
+            </div>
+			<div class = "slide">
+				<div class = "slide-title">
+					Translations
+				</div>
+			</div>
         </div>
         <script type="text/javascript">
             jQuery.fx.off = true;
