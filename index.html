@@ -484,30 +484,35 @@ ul <b>li:nth-child(3n)</b>{ //css3!
                         RGBA rgba(255,255,255,0.7); HSLA Colors hsla(0,0%,100%,0.7);
                     </li>
                 </ul>
-                <div class = "slide-title">
-                    Some Gotchas
-                </div>
-                <ul>
-                    <li>
-                        Use fonts carefully - embed fonts in CSS files
-                    </li>
-                    <li>
-                        Opacity may lead to performance hits
-                    </li>
-                    <li>
-                        Excessive transforms cost rendering cycles
-                    </li>
-                    <li>
-                        Vendor Prefixes
-                    </li>
-                    <li>
-                        Guard the modularity
-                    </li>
-                </ul>
+            </div>
+            <div class = "slide" style ="font-size : 1.5em">
+	            <div class = "slide-title">
+	                    and the Presentation part...
+	                </div>
+	                <ul>
+	                	<li>
+	                		CSS 3 is not for going back to 1990 :)
+	                	</li>
+	                    <li>
+	                        Use fonts carefully - embed fonts in CSS files
+	                    </li>
+	                    <li>
+	                        Opacity may lead to performance hits
+	                    </li>
+	                    <li>
+	                        Excessive transforms cost rendering cycles
+	                    </li>
+	                    <li>
+	                        Vendor Prefixes
+	                    </li>
+	                    <li>
+	                        Guard the modularity
+	                    </li>
+	                </ul>
             </div>
         </div>
         <script type="text/javascript">
-            jQuery.fx.off = true;
+            //jQuery.fx.off = true;
             function moveSlide(back){
                 var current = $(".slide-current").removeClass("slide-current").slideUp(1000);
                 if (back) {
